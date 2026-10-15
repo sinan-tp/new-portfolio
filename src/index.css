@@ -1,0 +1,120 @@
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  /* Minimal color palette */
+  --color-cocoa: #101211;
+  --color-cocoa-2: #202522;
+  --color-sand: #F2F4F2;
+  --color-indigo-deep: #181C19;
+  --color-lilac: #A3E635;
+  --color-lime-pop: #A3E635;
+
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-morph: morph 9s ease-in-out infinite, spin-slow 18s linear infinite;
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-letter: letter .8s cubic-bezier(.2,.9,.25,1.2) both;
+  --animate-rise: rise .7s ease-out both;
+  --animate-blink: blink 1s steps(1) infinite;
+
+  @keyframes float {
+    50% { translate: 0 -14px; }
+  }
+
+  @keyframes spin-slow {
+    to { rotate: 360deg; }
+  }
+
+  @keyframes morph {
+    50% {
+      border-radius: 58% 42% 40% 60% / 45% 58% 42% 55%;
+    }
+  }
+
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes letter {
+    from {
+      opacity: 0;
+      transform: translateY(60%) rotate(8deg);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  background-color: var(--color-cocoa);
+  color: var(--color-sand);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101211;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424942;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A3E635;
+}
+
+/* Text selection */
+::selection {
+  background: #A3E635;
+  color: #101211;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

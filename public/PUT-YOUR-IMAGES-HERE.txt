@@ -1,0 +1,5 @@
+Copy these files into this folder (public/):
+  IMG_9172.PNG     -> logo
+  Untitled-1.png   -> /Users/comprint/Documents/2026-10-14 13.13.53.jpg
+  resume.png       -> your resume (renamed from "ChatGPT Image May 25, 2026, 03_13_38 PM.png")
+Then delete this text file.
